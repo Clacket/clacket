@@ -1,6 +1,6 @@
-# dionysus
+# clacket
 Movie recommendation engine and other things we're thinking through.
-Dionysus is a temp name, but [it means the Greek God of wine and theatre](https://en.wikipedia.org/wiki/Dionysus).
+WE HAVE A NAME.
 
 ## Members
 - Mariam, [@blaringsilence](https://github.com/blaringsilence).
