@@ -8,28 +8,33 @@ WE HAVE A NAME.
 
 ## Install/Run
 1. Clone the github repo
-```bash
-	$ git clone https://github.com/blaringsilence/clacket.git
-	$ cd clacket
-```
+
+	```bash
+		$ git clone https://github.com/blaringsilence/clacket.git
+		$ cd clacket
+	```
 2. Install virtualenv and activate it
-```bash
-	$ pip install virtualenv
-	$ virtualenv -p python3 venv
-	$ . venv/bin/activate
-```
+
+	```bash
+		$ pip install virtualenv
+		$ virtualenv -p python3 venv
+		$ . venv/bin/activate
+	```
 3. Install requirements
-```bash
-	$ pip install -r requirements.txt
-```
+
+	```bash
+		$ pip install -r requirements.txt
+	```
 
 ## Save changes to installed packages before commiting (so environment is the same with everyone)
 1. Freeze requirements
-```bash
-	$ pip freeze > requirements.txt
-```
+
+	```bash
+		$ pip freeze > requirements.txt
+	```
 2. Commit changes as you would normally with git
 3. To deactivate the virtualenv, simply:
-```bash
-	$ deactivate
-```
+
+	```bash
+		$ deactivate
+	```
