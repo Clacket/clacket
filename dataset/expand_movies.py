@@ -37,45 +37,54 @@ def expand(start, file_path, encoding, o_success, o_failed):
 	url = 'http://www.omdbapi.com/'
 	with open(file_path, encoding=encoding) as movies:
 		for index, line in enumerate(movies):
-			if index + 1 >= start:
-				try:
-					l = line.strip('\n')
-					parts = l.split(',')
-					id_num = parts[0]
-					year = parts[1]
-					title = parts[2]
-					data = { 't': title, 'y': year }
-					r = requests.get(url, params=data)
+			trials = 0
+			while trials <= 20:
+				if index + 1 >= start:
 					try:
-						r.raise_for_status()
-						response = r.json()
-						if response['Title'].lower() != title.lower():
-							raise Exception('Not the movie')
-						retrieved = [id_num,\
-									title,\
-									year,\
-									response['Genre'],\
-									response['Actors'],\
-									response['Director'],\
-									response['Writer'],\
-									response['Language'],\
-									response['Country'],\
-									response['Type']]
-						expanded_info = '|'.join(retrieved)
-						with open(o_success, 'a') as expanded:
-							expanded.write(expanded_info + '\n')
-					except: # if not the movie, or the response isn't JSON/doesn't have the fields
-						with open(o_failed, 'a') as couldnt:
-							couldnt.write(line)
-					start = index + 1
-					print('\r' + str(start), end='', flush=True)
-					time.sleep(2)
-				except IndexError:
-					print('There is an error in ' + file_path + '\'s format at line ' + str(index + 1) + ':'\
-						  + '\nEvery line should have 3 comma-separated fields: id,year_of_release,title')
+						l = line.strip('\n')
+						parts = l.split(',')
+						id_num = parts[0]
+						year = parts[1]
+						title = parts[2]
+						data = { 't': title, 'y': year }
+						r = requests.get(url, params=data)
+						try:
+							r.raise_for_status()
+							response = r.json()
+							if response['Title'].lower() != title.lower():
+								raise Exception('Not the movie')
+							retrieved = [id_num,\
+										title,\
+										year,\
+										response['Genre'],\
+										response['Actors'],\
+										response['Director'],\
+										response['Writer'],\
+										response['Language'],\
+										response['Country'],\
+										response['Type']]
+							expanded_info = '|'.join(retrieved)
+							with open(o_success, 'a') as expanded:
+								expanded.write(expanded_info + '\n')
+						except: # if not the movie, or the response isn't JSON/doesn't have the fields
+							with open(o_failed, 'a') as couldnt:
+								couldnt.write(line)
+						start = index + 1
+						print('\r' + str(start), end='', flush=True)
+						time.sleep(2)
+						break
+					except IndexError:
+						print('There is an error in ' + file_path + '\'s format at line ' + str(index + 1) + ':'\
+							  + '\nEvery line should have 3 comma-separated fields: id,year_of_release,title')
+						break
+					except (Timeout, ConnectionError): # if request times out or there's a connection error at the moment
+						time.sleep(30)
+				else:
 					break
-				except (Timeout, ConnectionError): # if request times out
-					time.sleep(30)
+				trials += 1
+			if trials > 20:
+				print('Could not resolve connection issues after 20 trials. Stopped at movie on line ' + str(index+1) + '.')
+				break
 
 
 if __name__ == '__main__':

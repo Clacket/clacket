@@ -1,6 +1,6 @@
 # The Dataset
 dataset/*
-!dataset/*.py
+!dataset/expanded_movies.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
