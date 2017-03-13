@@ -31,7 +31,7 @@ import requests
 import time
 import argparse
 from pathlib import Path
-from requests.exceptions import Timeout
+from requests.exceptions import Timeout, ConnectionError
 
 def expand(start, file_path, encoding, o_success, o_failed):
 	url = 'http://www.omdbapi.com/'
@@ -74,7 +74,7 @@ def expand(start, file_path, encoding, o_success, o_failed):
 					print('There is an error in ' + file_path + '\'s format at line ' + str(index + 1) + ':'\
 						  + '\nEvery line should have 3 comma-separated fields: id,year_of_release,title')
 					break
-				except Timeout: # if request times out
+				except (Timeout, ConnectionError): # if request times out
 					time.sleep(30)
 
 
