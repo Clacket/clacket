@@ -19,7 +19,13 @@ A [script](expand_movies.py) was written to retrieve more features per movie fro
 We believe those features could make recommendations more accurate, but we are yet to test the accuracy of this assumption by comparing between recommendation accuracy with and without the extra features.
 
 ### Script Results
-Out of 17770 titles, we were able to expand 9399 (52.8%) on the first try.
+Out of 17770 titles, we were able to expand 9399 (52.8%) on the first try. The results were then stored in [expanded_movies.txt](expanded_movies.txt) in the following format (each line is a movie):
+
+  ```Movie_Id|Title|Genres|Actors|Directors|Writers|Languages|Countries|Type```
+
+Any field that can contain more than 1 entry (e.g. Genres) is comma-separated with no trailing comma.
+
+Movies that could not be expanded were stored in the same format as movie_titles.txt (from the base dataset) in the file called [couldnt_expand.txt](couldnt_expand.txt).
 
 ### Script Usage
 1. Download and extract the dataset into this folder (so files like movie_titles.txt are on top).
