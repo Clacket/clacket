@@ -19,7 +19,7 @@ A [script](expand_movies.py) was written to retrieve more features per movie fro
 We believe those features could make recommendations more accurate, but we are yet to test the accuracy of this assumption by comparing between recommendation accuracy with and without the extra features.
 
 ### Script Results
-Out of 17770 titles, we were able to expand 9359 (52.6%) on the first try.
+Out of 17770 titles, we were able to expand 9399 (52.8%) on the first try.
 
 ### Script Usage
 1. Download and extract the dataset into this folder (so files like movie_titles.txt are on top).
