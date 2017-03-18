@@ -19,7 +19,7 @@ A [script](expand_movies.py) was written to retrieve more features per movie fro
 We believe those features could make recommendations more accurate, but we are yet to test the accuracy of this assumption by comparing between recommendation accuracy with and without the extra features.
 
 ### Script Results
-Out of 17770 titles, we were able to expand 9399 (52.8%) on the first try. The results were then stored in [expanded_movies.txt](expanded_movies.txt) in the following format (each line is a movie):
+Out of 17,770 titles, we were able to expand 9,399 (52.8%) on the first try, which correspond to 81,251,406 ratings (80.9%) in the training set. The results were then stored in [expanded_movies.txt](expanded_movies.txt) in the following format (each line is a movie):
 
   ```Movie_Id|Title|Genres|Actors|Directors|Writers|Languages|Countries|Type```
 
