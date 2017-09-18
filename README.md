@@ -36,6 +36,6 @@ WE HAVE A NAME.
 ## Test and Lint Python
 (Testing lints but linting doesn't test)
 ```bash
-		$ make lint
-		$ make test
+	$ make lint
+	$ make test
 ```
