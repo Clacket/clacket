@@ -3,7 +3,7 @@ Movie recommendation engine and other things we're thinking through.
 WE HAVE A NAME.
 
 ## Members
-- Mariam, [@blaringsilence](https://github.com/mariamrf).
+- Mariam, [@mariamrf](https://github.com/mariamrf).
 - Tarek, [@TarekSamirJedi](https://github.com/TarekSamirJedi).
 
 ## Install/Run
