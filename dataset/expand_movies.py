@@ -119,7 +119,7 @@ if __name__ == '__main__':
         '--file',
         help='Path for the file that contains'
              'the movie titles (every line is a movie in the following format:'
-             ' id,year_of_release,title',
+             ' id,year_of_release,title)',
         type=str,
         default='movie_titles.txt',
         metavar='')
