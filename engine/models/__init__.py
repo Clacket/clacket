@@ -3,8 +3,9 @@ class Feature(object):
         self.name = kwargs.get('name')
         self.type = kwargs.get('type')
         self.is_list = kwargs.get('list', False)
-        self.value = kwargs.get('value', '').split(',') if self.is_list \
-            else kwargs.get('value')
+        if self.is_list and self.type == 'num':
+            raise ValueError('Numerical values cannot be lists.')
+        self.value = kwargs.get('value', 'N/A')
 
     @property
     def value(self):
@@ -12,7 +13,7 @@ class Feature(object):
 
     @value.setter
     def value(self, val):
-        vals = [val] if not self.is_list else val
+        vals = [val] if not self.is_list else val.split(',')
         processed = []
         for value in vals:
             if value != 'N/A':
@@ -28,6 +29,10 @@ class Feature(object):
 
     def __str__(self):
         return str(self.value)
+
+    def __eq__(self, other):
+        return self.value == other.value if isinstance(other, Feature) \
+            else self.value == other
 
     def __sub__(self, other):
         # 1. Only allow valid subtractions
@@ -48,8 +53,8 @@ class Feature(object):
             intersect, only_self, only_other = 0, 0, 0
         elif self.is_list:
             intersect = len([x for x in self.value if x in other.value])
-            only_self = len([x for x in self.value if x not in other.value])
-            only_other = len([x for x in other.value if x not in self.value])
+            only_self = len(self.value) - intersect
+            only_other = len(other.value) - intersect
         else:
             if self.value == other.value:
                 intersect, only_self, only_other = 1, 0, 0

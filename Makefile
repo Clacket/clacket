@@ -1,7 +1,7 @@
 test:
 	make clean
 	make lint
-	# py.test --cov=ma --disable-pytest-warnings tests/
+	@py.test --disable-pytest-warnings tests/
 
 lint:
 	@flake8 . --exclude venv,docs
