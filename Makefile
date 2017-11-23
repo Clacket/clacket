@@ -4,7 +4,7 @@ test:
 	@py.test --disable-pytest-warnings tests/
 
 lint:
-	@flake8 . --exclude venv,docs,dataset
+	@flake8 . --exclude venv,docs
 	# @pylint . --rcfile=pylintrc
 
 clean:

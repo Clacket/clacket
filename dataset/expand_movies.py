@@ -3,7 +3,7 @@
 # A script to fetch a movie's genre, actors, director, writer, language,
 # country, and type (movie/series) from the Open Movie Database,
 # which gets its data from IMDb.
-# ==========================================================================================================
+# ============================================================================
 # To run, simply:
 #     $ chmod a+x expand_movies.py
 #     $ ./expand_movies.py -s ID_OF_FIRST_MOVIE_TO_FETCH
@@ -21,7 +21,7 @@
 # This has to run with a movie title file provided,
 # where each movie is on a new line in the following format:
 #     id,year_of_release,name
-# ===========================================================================================================
+# ============================================================================
 # Expected output:
 #     - A file in the same dir called expanded_movies.txt which has the data of
 #      every movie on a new line.
@@ -33,7 +33,7 @@
 #       (not found in OMDb, found but not the same movie title, etc)
 #     - In case of connectivity issues with the database,
 #       it will try again after 30 seconds (indefinitely)
-# ===========================================================================================================
+# ============================================================================
 # Written on the 12th of March, 2017 as part of our graduation project,
 # Clacket, which uses (and expands) the Netflix Prize Dataset to build a
 # recommendation engine.
