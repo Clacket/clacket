@@ -1,4 +1,4 @@
-from engine.models import Movie
+from engine.models.movie import Movie
 
 
 DATASET = '../dataset/expanded_movies.txt'

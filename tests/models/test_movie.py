@@ -2,7 +2,7 @@ import copy
 
 import pytest
 
-from engine.models import Movie
+from engine.models.movie import Movie
 
 
 @pytest.fixture

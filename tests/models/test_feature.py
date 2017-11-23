@@ -2,7 +2,7 @@ import copy
 
 import pytest
 
-from engine.models import Feature
+from engine.models.feature import Feature
 
 
 @pytest.fixture
