@@ -1,27 +1,32 @@
+import pandas as pd
+
 from engine.models.movie import Movie
 
 
-DATASET = '../dataset/expanded_movies.txt'
+DATASET = 'dataset/expanded_movies.txt'
+TRAINING = 'dataset/training_set'
 
 
-def parse(string):
-    return Movie(string)
+def save_all(folder):
+    with open(DATASET) as dataset:
+        for movie_line in dataset:
+            movie_line = movie_line.rstrip('\n')
+            movie = Movie(movie_line)
+            movie_id = movie.id.value
+            zeros = '0' * (7 - len(movie_id))
+            ratings_file = '{0}/mv_{1}{2}.txt'.format(
+                TRAINING, zeros, movie_id)
+            ratings_df = pd.read_csv(
+                ratings_file,
+                header=None,
+                names=['user_id', 'rating', 'date'],
+                skiprows=1,
+                parse_dates=['date'],
+                infer_datetime_format=True)
+            movie.ratings = ratings_df
+            movie.save(folder)
 
 
 if __name__ == '__main__':
-    string = "1|Dinosaur Planet|2003|"\
-             "Documentary,Animation,Family|"\
-             "Christian Slater,Scott Sampson|"\
-             "N/A|N/A|English|USA|series"
-    movie = parse(string)
-    string2 = "20|Seeta Aur Geeta|1972|"\
-              "Comedy,Drama,Family|"\
-              "Dharmendra,Sanjeev Kumar,Hema Malini,Manorama|"\
-              "Ramesh Sippy|Javed Akhtar,Javed Akhtar,"\
-              "Satish Bhatnagar,Satish Bhatnagar,"\
-              "Salim Khan,Salim Khan|Hindi|India|movie"
-    movie2 = parse(string2)
-
-    print(movie)
-    print(movie2)
-    print(movie - movie2)
+    folder = '/media/mariam/Files/ran/clacket-save'
+    save_all(folder)

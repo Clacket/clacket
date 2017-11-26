@@ -5634,7 +5634,7 @@
 10771|Return to Lonesome Dove|1993|Drama,Western|Jon Voight,Barbara Hershey,Ricky Schroder,William Petersen|N/A|N/A|English|USA|series
 10774|Taxi Driver|1976|Crime,Drama|Diahnne Abbott,Frank Adu,Victor Argo,Gino Ardito|Martin Scorsese|Paul Schrader|English,Spanish|USA|movie
 10775|The Haunting|1963|Horror|Julie Harris,Claire Bloom,Richard Johnson,Russ Tamblyn|Robert Wise|Nelson Gidding,Shirley Jackson|English|UK,USA|movie
-10782|Roti Kapada Aur Makaan|NULL|Drama,Musical,Romance|Manoj Kumar,Shashi Kapoor,Zeenat Aman,Moushumi Chatterjee|Manoj Kumar|Manoj Kumar|Hindi|India|movie
+10782|Roti Kapada Aur Makaan|N/A|Drama,Musical,Romance|Manoj Kumar,Shashi Kapoor,Zeenat Aman,Moushumi Chatterjee|Manoj Kumar|Manoj Kumar|Hindi|India|movie
 10785|U-571|2000|Action,War|Matthew McConaughey,Bill Paxton,Harvey Keitel,Jon Bon Jovi|Jonathan Mostow|Jonathan Mostow,Jonathan Mostow,Sam Montgomery,David Ayer|English,German|France,USA|movie
 10789|Second Skin|2000|Thriller|Natasha Henstridge,Angus Macfadyen,Liam Waite,Norman Anstey|Darrell Roodt|John Lau|English|Canada,South Africa,UK|movie
 10794|The Singing Forest|2003|Drama,Fantasy,Romance|Jon Sherrin,Erin Leigh Price,Eric Morris,David Guzzone|Jorge Ameer|Jorge Ameer|English|USA|movie
@@ -8775,7 +8775,7 @@
 16671|Babylon 5: Thirdspace|1998|Action,Adventure,Drama|Bruce Boxleitner,Claudia Christian,Mira Furlan,Richard Biggs|Jesús Salvador Treviño|J. Michael Straczynski,J. Michael Straczynski|English|USA|movie
 16676|Wolfen|1981|Horror,Thriller|Albert Finney,Diane Venora,Edward James Olmos,Gregory Hines|Michael Wadleigh,John D. Hancock,Rupert Hitzig|Whitley Strieber,David Eyre,Michael Wadleigh,David Eyre,Michael Wadleigh|English|USA|movie
 16677|Night and Day|1946|Biography,Drama,Musical|Cary Grant,Alexis Smith,Monty Woolley,Ginny Simms|Michael Curtiz|Charles Hoffman,Leo Townsend,William Bowers,Jack Moffitt|English|USA|movie
-16678|Jimmy Hollywood|NULL|Crime,Comedy,Drama|Joe Pesci,Christian Slater,Victoria Abril,Jason Beghe|Barry Levinson|Barry Levinson|English|USA|movie
+16678|Jimmy Hollywood|N/A|Crime,Comedy,Drama|Joe Pesci,Christian Slater,Victoria Abril,Jason Beghe|Barry Levinson|Barry Levinson|English|USA|movie
 16679|P.U.N.K.S.|1999|Comedy,Sci-Fi|Tim Redwine,Kenneth A. Brown,Patrick Renna,Brandon Baker|Sean McNamara|Mark Cramer,Sean McNamara,Mark Cramer|English|USA|movie
 16680|Vacuuming Completely Nude in Paradise|2001|Comedy,Drama|Timothy Spall,Michael Begley,Katy Cavanagh,Caroline Ashley|Danny Boyle|Jim Cartwright|English|UK|movie
 16681|Juliet in Love|2000|Drama,Romance|Sandra Kwan Yue Ng,Francis Ng,Eric Kot,Simon Yam|Wilson Yip|Matt Chow,Wilson Yip|Cantonese|Hong Kong|movie

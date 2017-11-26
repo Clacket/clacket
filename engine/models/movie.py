@@ -1,3 +1,5 @@
+import pickle
+
 from engine.models.feature import Feature
 
 
@@ -14,6 +16,8 @@ class Movie(object):
         {'name': 'countries', 'type': 'cat', 'list': True},
         {'name': 'type', 'type': 'cat'}
     ]
+
+    ratings = None
 
     def __init__(self, string):
         values = string.split('|')
@@ -46,3 +50,13 @@ class Movie(object):
         distance_cat = 1 - cat_similarity
 
         return distance_num + distance_cat
+
+    def save(self, folder):
+        with open('{0}/mv_{1}.pyc'.format(folder, self.id.value), 'wb') as f:
+            pickle.dump(self, f)
+
+    @classmethod
+    def load(cls, folder, id):
+        with open('{0}/mv_{1}.pyc'.format(folder, id), 'rb') as f:
+            movie = pickle.load(f)
+        return movie
