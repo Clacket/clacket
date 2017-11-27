@@ -1,7 +1,5 @@
 import pickle
 
-import pandas as pd
-
 from engine.models.feature import Feature
 
 
@@ -20,8 +18,6 @@ class Movie(object):
     ]
 
     ratings = None
-
-    distances = pd.DataFrame(columns=['movie_id', 'distance'])
 
     def __init__(self, string):
         values = string.split('|')
@@ -54,16 +50,6 @@ class Movie(object):
         distance_cat = 1 - cat_similarity
 
         return distance_num + distance_cat
-
-    def add_distance(self, other, switch=True):
-        if not (self.distances['movie_id'] == other.id.value).any() \
-                and other.id != self.id:
-            distance = self - other
-            self.distances = self.distances.append(
-                {'movie_id': other.id.value, 'distance': distance},
-                ignore_index=True)
-        if switch:
-            other.add_distance(self, switch=False)
 
     def save(self, folder):
         with open('{0}/mv_{1}.pyc'.format(folder, self.id.value), 'wb') as f:
