@@ -34,6 +34,15 @@ def calc_all(folder):
     matrix.save()
 
 
+def calc_one(movie_id, folder):
+    # Assumes existing distance matrix
+    matrix = DistanceMatrix(folder)
+    matrix.load()
+    calc_distance(movie_id, folder, matrix)
+    # here: also add the movie to the dataset
+    matrix.save()
+
+
 if __name__ == '__main__':
     folder = '/media/mariam/Files/ran/clacket-save'
     calc_all(folder)
