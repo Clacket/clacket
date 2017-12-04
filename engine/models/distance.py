@@ -19,9 +19,17 @@ class DistanceMatrix(object):
         if id1 == id2:
             return 0
         else:
-            smaller = min(id1, id2)
-            bigger = max(id1, id2)
+            smaller = str(min(id1, id2))
+            bigger = str(max(id1, id2))
             return self.matrix[smaller][bigger]
+
+    def get_all(self, id):
+        min_id = min(self.matrix.keys())
+        all_ids = [min_id] + list(self.matrix[min_id].keys())
+        distances = []
+        for id2 in all_ids:
+            distances.append((id2, self.get(id, id2)))
+        return distances
 
     def update(self, id1, id2, distance):
         smaller = min(id1, id2)

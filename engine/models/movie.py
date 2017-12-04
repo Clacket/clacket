@@ -18,6 +18,7 @@ class Movie(object):
     ]
 
     ratings = None
+    predictions = None
 
     def __init__(self, string):
         values = string.split('|')
