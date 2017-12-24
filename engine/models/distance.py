@@ -26,8 +26,11 @@ class DistanceMatrix(object):
     def get_all(self, id):
         min_id = min(self.matrix.keys())
         all_ids = [min_id] + list(self.matrix[min_id].keys())
+        return self.get_some(id, all_ids)
+
+    def get_some(self, id, ids):
         distances = []
-        for id2 in all_ids:
+        for id2 in ids:
             distances.append((id2, self.get(id, id2)))
         return distances
 

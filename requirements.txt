@@ -1,6 +1,7 @@
 bleach==1.5.0
+cycler==0.10.0
 decorator==4.1.2
--e git+git@github.com:Clacket/clacket.git@07e2850ef8477a392c9ceefe2ee882d71349211f#egg=engine
+-e git+git@github.com:Clacket/clacket.git@35664fccc05de0fa94e12995d283e34007650f49#egg=engine
 entrypoints==0.2.3
 flake8==3.4.1
 html5lib==0.9999999
@@ -17,6 +18,7 @@ jupyter-console==5.2.0
 jupyter-core==4.4.0
 Markdown==2.6.9
 MarkupSafe==1.0
+matplotlib==2.1.1
 mccabe==0.6.1
 mistune==0.8.1
 nbconvert==5.3.1
@@ -35,6 +37,7 @@ py==1.5.2
 pycodestyle==2.3.1
 pyflakes==1.5.0
 Pygments==2.2.0
+pyparsing==2.2.0
 pytest==3.2.5
 python-dateutil==2.6.1
 pytz==2017.3
